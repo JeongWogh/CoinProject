@@ -1,0 +1,25 @@
+.session-timer {
+    font-size: 0.8rem;
+    color: #666;
+    white-space: nowrap;
+}
+.logout-btn {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 10px;
+}
