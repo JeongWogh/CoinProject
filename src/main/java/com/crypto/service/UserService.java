@@ -1,17 +1,17 @@
-package com.coin.service;
+package com.crypto.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.coin.config.BCryptEncoder;
-import com.coin.dto.LoginRequestDTO;
-import com.coin.dto.PasswordChangeDTO;
-import com.coin.dto.SignupDTO;
-import com.coin.dto.StyleDTO;
-import com.coin.dto.UserResponseDTO;
-import com.coin.entity.User;
-import com.coin.entity.VirtualAccount;
-import com.coin.repository.UserRepository;
+import com.crypto.config.BCryptEncoder;
+import com.crypto.dto.LoginRequestDTO;
+import com.crypto.dto.PasswordChangeDTO;
+import com.crypto.dto.SignupDTO;
+import com.crypto.dto.StyleDTO;
+import com.crypto.dto.UserResponseDTO;
+import com.crypto.entity.User;
+import com.crypto.entity.VirtualAccount;
+import com.crypto.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -35,7 +35,6 @@ public class UserService {
         user.setUsername(signupDto.getUsername());
         user.setEmail(signupDto.getEmail());
         user.setPassword(bCryptEncoder.encode(signupDto.getPassword()));
-        user.setStyle(signupDto.getStyle());
 
         VirtualAccount virtualAccount = new VirtualAccount(user);
         user.setVirtualAccount(virtualAccount);

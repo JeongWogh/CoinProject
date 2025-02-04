@@ -7,6 +7,9 @@ import MyPage from './components/MyPage';
 import InvestmentSurvey from './components/InvestmentSurvey';
 import SessionTimer from './components/SessionTimer';  // 새로 추가할 컴포넌트
 import MarketIndex from './components/MarketIndex';
+import BoardList from './components/community/BoardList';
+import BoardWrite from './components/community/BoardWrite';
+import BoardDetail from './components/community/BoardDetail';
 import './App.css';
 
 function App() {
@@ -47,7 +50,7 @@ function App() {
             <div className="app">
                 <nav className="nav-bar">
                     <Link to="/" className="nav-logo">
-                        가상화폐 모의투자
+                        주가조작단
                     </Link>
                     <div className="nav-menu">
                         <Link to="/" className="menu-item">거래소</Link>
@@ -56,7 +59,7 @@ function App() {
                         <Link to="/" className="menu-item">코인동향</Link>
                         <Link to="/" className="menu-item">투자관리</Link>
                         <Link to="/" className="menu-item">고객센터</Link>
-						<Link to="/" className="menu-item">커뮤니티</Link>
+						<Link to="/boards" className="menu-item">커뮤니티</Link>
                     </div>
 					<div className="nav-links">
 					    {user ? (
@@ -79,14 +82,17 @@ function App() {
 					</div>
                 </nav>
 
-                <Routes>
-                    <Route path="/" element={<main />} />
-					<Route paht="/main" element={<MarketIndex />}/> 
-                    <Route path="/signup" element={<SignUp />} />
-                    <Route path="/login" element={<Login setUser={setUser} />} />
-                    <Route path="/mypage" element={<MyPage />} />
-                    <Route path="/investment-survey" element={<InvestmentSurvey />} />
-                </Routes>
+				<Routes>
+				   <Route path="/" element={<MarketIndex />} />
+				   <Route path="/main" element={<MarketIndex />}/>
+				   <Route path="/signup" element={<SignUp />} />
+				   <Route path="/login" element={<Login setUser={setUser} />} />
+				   <Route path="/mypage" element={<MyPage />} />
+				   <Route path="/investment-survey" element={<InvestmentSurvey />} />
+				   <Route path="/boards" element={<BoardList />} />
+				   <Route path="/boards/write" element={<BoardWrite />} />
+				   <Route path="/boards/:id" element={<BoardDetail />} />
+				</Routes>
             </div>
         </Router>
     );

@@ -1,8 +1,9 @@
-package com.coin.dto;
+package com.crypto.dto;
+
+import com.crypto.entity.User;
 
 import lombok.Getter;
 import lombok.Setter;
-import com.coin.entity.User;
 
 @Getter
 @Setter

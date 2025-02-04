@@ -1,7 +1,8 @@
-package com.coin.repository;
+package com.crypto.repository;
 
-import com.coin.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.crypto.entity.User;
 
 import java.util.Optional;
 

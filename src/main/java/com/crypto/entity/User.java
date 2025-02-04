@@ -1,4 +1,4 @@
-package com.coin.entity;
+package com.crypto.entity;
 
 import java.time.LocalDateTime;
 import jakarta.persistence.CascadeType;

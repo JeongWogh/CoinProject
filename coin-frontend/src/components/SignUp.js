@@ -9,8 +9,7 @@ function SignUp() {
     const [formData, setFormData] = useState({
         username: '',
         email: '',
-        password: '',
-        style: '안정형' // 기본값
+        password: ''
     });
 
     const handleChange = (e) => {
@@ -27,7 +26,7 @@ function SignUp() {
             alert('회원가입이 완료되었습니다.');
             navigate('/login'); // 로그인 페이지로 이동
         } catch (error) {
-            alert(error.message || '회원가입 중 오류가 발생했습니다.');
+            alert(error || '회원가입 중 오류가 발생했습니다.');
         }
     };
 
@@ -64,17 +63,6 @@ function SignUp() {
                         placeholder="비밀번호"
                         required
                     />
-                </div>
-                <div className="form-group">
-                    <select 
-                        name="style" 
-                        value={formData.style}
-                        onChange={handleChange}
-                        required
-                    >
-                        <option value="안정형">안정형</option>
-                        <option value="공격형">공격형</option>
-                    </select>
                 </div>
                 <button type="submit">가입하기</button>
             </form>

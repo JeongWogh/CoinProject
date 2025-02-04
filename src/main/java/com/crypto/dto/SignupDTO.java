@@ -1,11 +1,12 @@
-package com.coin.dto;
+package com.crypto.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class LoginRequestDTO {
+public class SignupDTO {
     private String username;
+    private String email;
     private String password;
 }

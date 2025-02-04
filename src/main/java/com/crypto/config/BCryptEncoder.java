@@ -1,4 +1,4 @@
-package com.coin.config;
+package com.crypto.config;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Component;

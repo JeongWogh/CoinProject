@@ -1,4 +1,4 @@
-package com.coin.dto;
+package com.crypto.dto;
 
 import lombok.Getter;
 import lombok.Setter;
