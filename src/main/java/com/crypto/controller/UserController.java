@@ -1,5 +1,7 @@
 package com.crypto.controller;
 
+import java.util.Map;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -117,9 +119,23 @@ public class UserController {
     public ResponseEntity<?> checkSession(HttpSession session) {
     	UserResponseDTO user = (UserResponseDTO) session.getAttribute("LOGGED_IN_USER");
     	if(user == null) {
-        	return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+        	return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("로그인이 필요합니다.");
         }
         return ResponseEntity.ok(user);
     }    
     
+    @PutMapping("user/nickname")
+    public ResponseEntity<?> updateNickname(@RequestBody Map<String, String> request, HttpSession session) {
+        UserResponseDTO user = (UserResponseDTO) session.getAttribute("LOGGED_IN_USER");
+        if(user == null) {
+        	return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("로그인이 필요합니다.");
+        }
+        
+        try {
+			userService.updateNickname(user.getUsername(), request.get("nickname"));
+			return ResponseEntity.ok("닉네임이 변경되었습니다.");
+		} catch (RuntimeException e) {
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+    }
 }

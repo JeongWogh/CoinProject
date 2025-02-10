@@ -34,6 +34,7 @@ public class BoardService {
        dto.setTitle(board.getTitle());
        dto.setContent(board.getContent());
        dto.setUsername(board.getUser().getUsername());
+       dto.setNickname(board.getUser().getNickname());
        dto.setViewCount(board.getViewCount());
        dto.setLikeCount(board.getLikeCount());
        dto.setCreatedAt(board.getCreatedAt());
@@ -46,6 +47,7 @@ public class BoardService {
                commentDto.setId(comment.getId());
                commentDto.setContent(comment.getContent());
                commentDto.setUsername(comment.getUser().getUsername());
+               commentDto.setNickname(comment.getUser().getNickname());
                commentDto.setCreatedAt(comment.getCreatedAt());
                commentDto.setAuthor(user != null && user.getUsername().equals(comment.getUser().getUsername()));
                return commentDto;

@@ -10,6 +10,7 @@ import lombok.Setter;
 public class UserResponseDTO {
     private Long userId;
     private String username;
+    private String nickname;
     private String email;
     private String style;
 
@@ -19,6 +20,7 @@ public class UserResponseDTO {
         dto.setUsername(user.getUsername());
         dto.setEmail(user.getEmail());
         dto.setStyle(user.getStyle());
+        dto.setNickname(user.getNickname());
         return dto;
     }
 }

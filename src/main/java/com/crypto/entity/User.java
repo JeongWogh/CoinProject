@@ -27,6 +27,9 @@ public class User {
 
     @Column(unique = true, nullable = false)
     private String username;
+    
+    @Column(unique = true, nullable = false)
+    private String nickname;
 
     @Column(unique = true, nullable = false)
     private String email;
@@ -38,7 +41,6 @@ public class User {
     private LocalDateTime createAt;
 
     private String style;  // 투자 성향
-    private String favorite;  // 코인 즐겨찾기
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private VirtualAccount virtualAccount;

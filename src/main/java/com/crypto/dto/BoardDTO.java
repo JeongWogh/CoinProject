@@ -13,6 +13,7 @@ public class BoardDTO {
 	private String title;
 	private String content;
 	private String username;
+	private String nickname;
 	private int viewCount;
 	private int likeCount;
 	private LocalDateTime createdAt;
