@@ -11,7 +11,7 @@ function InvestmentSurvey() {
     const questions = [
 		{
 	        "category": "투자 경험 및 지식",
-	        "question": "가상화폐 투자 경험 기간",
+	        "question": "가상화폐 투자 경험이 얼마나 되셨나요?",
 	        "options": [
 	            { "text": "경험 없음", "score": 1 },
 	            { "text": "6개월 미만", "score": 2 },
@@ -22,7 +22,7 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "투자 경험 및 지식",
-	        "question": "주식/펀드 등 다른 투자 경험",
+	        "question": "주식이나 펀드 등 다른 투자 경험이 있으신가요?",
 	        "options": [
 	            { "text": "경험 없음", "score": 1 },
 	            { "text": "예금, 적금만", "score": 2 },
@@ -33,7 +33,7 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "투자 경험 및 지식",
-	        "question": "투자 관련 공부/학습 시간 (주간)",
+	        "question": "일주일에 투자 관련 공부나 학습을 얼마나 하시나요?",
 	        "options": [
 	            { "text": "거의 안함", "score": 1 },
 	            { "text": "1시간 미만", "score": 2 },
@@ -44,18 +44,18 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "투자 경험 및 지식",
-	        "question": "가상화폐 시장에 대한 이해도",
+	        "question": "가상화폐 시장에 대한 이해도는 어느 정도인가요?",
 	        "options": [
 	            { "text": "전혀 모름", "score": 1 },
 	            { "text": "기초 개념만 앎", "score": 2 },
 	            { "text": "주요 코인과 거래소 이해", "score": 3 },
-	            { "text": "차트분석과 기술적 지표 이해", "score": 4 },
+	            { "text": "차트 분석과 기술적 지표 이해", "score": 4 },
 	            { "text": "전문적 수준의 이해", "score": 5 }
 	        ]
 	    },
 	    {
 	        "category": "심리적 특성",
-	        "question": "손실에 대한 태도",
+	        "question": "투자에서 손실에 대한 태도는 어떠신가요?",
 	        "options": [
 	            { "text": "절대 손실 수용 불가", "score": 1 },
 	            { "text": "5% 미만 손실 수용", "score": 2 },
@@ -66,7 +66,7 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "심리적 특성",
-	        "question": "시장 급락 시 대처 방식",
+	        "question": "시장이 급락할 때 대처 방식은 어떻게 하시나요?",
 	        "options": [
 	            { "text": "즉시 전량 매도", "score": 1 },
 	            { "text": "손절가에서 매도", "score": 2 },
@@ -77,7 +77,7 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "심리적 특성",
-	        "question": "투자 결정 시 분석vs직관 비중",
+	        "question": "투자 결정을 내릴 때 분석과 직관의 비중은 어느 정도인가요?",
 	        "options": [
 	            { "text": "100% 분석 기반", "score": 1 },
 	            { "text": "80% 분석 / 20% 직관", "score": 2 },
@@ -88,7 +88,7 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "심리적 특성",
-	        "question": "투기적 성향 정도",
+	        "question": "투기적 성향은 어느 정도인가요?",
 	        "options": [
 	            { "text": "매우 보수적", "score": 1 },
 	            { "text": "다소 보수적", "score": 2 },
@@ -99,7 +99,7 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "투자 행태",
-	        "question": "선호하는 투자 기간",
+	        "question": "선호하는 투자 기간은 얼마나 되시나요?",
 	        "options": [
 	            { "text": "1개월 미만", "score": 1 },
 	            { "text": "1~3개월", "score": 2 },
@@ -110,7 +110,7 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "투자 행태",
-	        "question": "포트폴리오 조정 빈도",
+	        "question": "포트폴리오 조정을 얼마나 자주 하시나요?",
 	        "options": [
 	            { "text": "거의 안함", "score": 1 },
 	            { "text": "분기별", "score": 2 },
@@ -121,7 +121,7 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "투자 행태",
-	        "question": "투자 정보 수집 빈도",
+	        "question": "투자 정보를 얼마나 자주 수집하시나요?",
 	        "options": [
 	            { "text": "거의 안함", "score": 1 },
 	            { "text": "주 1회 미만", "score": 2 },
@@ -132,7 +132,7 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "투자 행태",
-	        "question": "매매 빈도 선호도",
+	        "question": "매매 빈도가 어떻게 되시나요?",
 	        "options": [
 	            { "text": "매우 낮음 (연 1~2회)", "score": 1 },
 	            { "text": "낮음 (월 1~2회)", "score": 2 },
@@ -143,7 +143,7 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "위험-수익 성향",
-	        "question": "목표 수익률 (연간)",
+	        "question": "목표 연간 수익률은 어떻게 되시나요?",
 	        "options": [
 	            { "text": "10% 미만", "score": 1 },
 	            { "text": "10~30%", "score": 2 },
@@ -154,7 +154,7 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "위험-수익 성향",
-	        "question": "감내 가능한 최대 손실률",
+	        "question": "감내 가능한 최대 손실률은 어느 정도인가요?",
 	        "options": [
 	            { "text": "5% 미만", "score": 1 },
 	            { "text": "5~10%", "score": 2 },
@@ -165,7 +165,7 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "위험-수익 성향",
-	        "question": "고위험-고수익 선호도",
+	        "question": "고위험-고수익 선호도는 어느 정도인가요?",
 	        "options": [
 	            { "text": "매우 낮음", "score": 1 },
 	            { "text": "다소 낮음", "score": 2 },
@@ -174,9 +174,9 @@ function InvestmentSurvey() {
 	            { "text": "매우 높음", "score": 5 }
 	        ]
 	    },
-	    {
+		{
 	        "category": "위험-수익 성향",
-	        "question": "투자 위험 감수 정도",
+	        "question": "투자 위험 감수 정도는 어떻게 되시나요?",
 	        "options": [
 	            { "text": "위험 회피형", "score": 1 },
 	            { "text": "다소 보수형", "score": 2 },
@@ -187,7 +187,7 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "자금 관리",
-	        "question": "총 자산 대비 투자 비중",
+	        "question": "총 자산 대비 투자 비중은 어떻게 되시나요?",
 	        "options": [
 	            { "text": "5% 미만", "score": 1 },
 	            { "text": "5~10%", "score": 2 },
@@ -198,7 +198,7 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "자금 관리",
-	        "question": "월 수입 대비 투자 비율",
+	        "question": "월 수입 대비 투자 비율은 어떻게 되시나요?",
 	        "options": [
 	            { "text": "5% 미만", "score": 1 },
 	            { "text": "5~10%", "score": 2 },
@@ -209,7 +209,7 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "자금 관리",
-	        "question": "비상금 보유 수준",
+	        "question": "비상금은 얼마나 보유하고 계신가요?",
 	        "options": [
 	            { "text": "1년치 이상 생활비", "score": 1 },
 	            { "text": "6개월치 생활비", "score": 2 },
@@ -220,7 +220,7 @@ function InvestmentSurvey() {
 	    },
 	    {
 	        "category": "자금 관리",
-	        "question": "레버리지 사용 의향",
+	        "question": "레버리지를 사용하실 의향이 있으신가요?",
 	        "options": [
 	            { "text": "절대 사용 안함", "score": 1 },
 	            { "text": "2배 미만 소액만", "score": 2 },

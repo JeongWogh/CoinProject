@@ -180,7 +180,7 @@ function BoardDetail() {
 	                            <div className="board-header">
 	                                <h2>{board.title}</h2>
 	                                <div className="board-info">
-	                                    <span>작성자: {board.username}</span>
+	                                    <span>작성자: {board.nickname}</span>
 	                                    <span>조회수: {board.viewCount}</span>
 	                                    <span>추천수: {board.likeCount}</span>
 	                                    <span>작성일: {dayjs(board.createdAt).format("YYYY-MM-DD HH:mm:ss")}</span>
@@ -233,7 +233,7 @@ function BoardDetail() {
 							{comments.map(comment => (
 							    <div key={comment.id} className="comment">
 							        <div className="comment-header">
-							            <span>{comment.username}</span>
+							            <span>{comment.nickname}</span>
 							            <span>{dayjs(comment.createdAt).format("YYYY-MM-DD HH:mm:ss")}</span>
 							        </div>
 							        {editingCommentId === comment.id ? (

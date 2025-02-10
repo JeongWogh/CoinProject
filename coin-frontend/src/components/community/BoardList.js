@@ -77,7 +77,7 @@ function BoardList() {
                         >
                             <td>{board.id}</td>
                             <td>{board.title}</td>
-                            <td>{board.username}</td>
+                            <td>{board.nickname}</td>
                             <td>{board.viewCount}</td>
                             <td>{board.likeCount}</td>
                             <td>{dayjs(board.createdAt).format("YYYY-MM-DD HH:mm:ss")}</td>

@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';  // useState, useEffect 추가
-import axios from 'axios';  // axios 추가
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import MyPage from './components/MyPage';
 import InvestmentSurvey from './components/InvestmentSurvey';
-import SessionTimer from './components/SessionTimer';  // 새로 추가할 컴포넌트
+import SessionTimer from './components/SessionTimer';
 import MarketIndex from './components/MarketIndex';
 import BoardList from './components/community/BoardList';
 import BoardWrite from './components/community/BoardWrite';
@@ -15,11 +15,10 @@ import './App.css';
 function App() {
     const [user, setUser] = React.useState(null);
 
-    // 로그인 상태 확인 함수
     const checkLoginStatus = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/user/info', { 
-                withCredentials: true 
+            const response = await axios.get('http://localhost:8080/api/user/info', {
+                withCredentials: true
             });
             setUser(response.data);
         } catch (error) {
@@ -27,16 +26,14 @@ function App() {
         }
     };
 
-    // 컴포넌트 마운트 시 로그인 상태 확인
     useEffect(() => {
         checkLoginStatus();
     }, []);
 
-    // 로그아웃 핸들러
     const handleLogout = async () => {
         try {
-            await axios.post('http://localhost:8080/api/logout', {}, { 
-                withCredentials: true 
+            await axios.post('http://localhost:8080/api/logout', {}, {
+                withCredentials: true
             });
             setUser(null);
             window.location.href = '/';
@@ -59,40 +56,40 @@ function App() {
                         <Link to="/" className="menu-item">코인동향</Link>
                         <Link to="/" className="menu-item">투자관리</Link>
                         <Link to="/" className="menu-item">고객센터</Link>
-						<Link to="/boards" className="menu-item">커뮤니티</Link>
+                        <Link to="/boards" className="menu-item">커뮤니티</Link>
                     </div>
-					<div className="nav-links">
-					    {user ? (
-					        <>
-					            <div className="user-info">
-					                <span className="user-name">{user.username}님</span>
-					                <SessionTimer />
-					            </div>
-					            <Link to="/mypage" className="nav-link">마이페이지</Link>
-					            <button onClick={handleLogout} className="logout-btn">
-					                로그아웃
-					            </button>
-					        </>
-					    ) : (
-					        <>
-					            <Link to="/signup" className="nav-link">회원가입</Link>
-					            <Link to="/login" className="nav-link">로그인</Link>
-					        </>
-					    )}
-					</div>
+                    <div className="nav-links">
+                        {user ? (
+                            <>
+                                <div className="user-info">
+                                    <span className="user-name">{user.nickname}님</span>
+                                    <SessionTimer setUser={setUser} />
+                                </div>
+                                <Link to="/mypage" className="nav-link">MY</Link>
+                                <button onClick={handleLogout} className="logout-btn">
+                                    로그아웃
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <Link to="/signup" className="nav-link">회원가입</Link>
+                                <Link to="/login" className="nav-link">로그인</Link>
+                            </>
+                        )}
+                    </div>
                 </nav>
 
-				<Routes>
-				   <Route path="/" element={<MarketIndex />} />
-				   <Route path="/main" element={<MarketIndex />}/>
-				   <Route path="/signup" element={<SignUp />} />
-				   <Route path="/login" element={<Login setUser={setUser} />} />
-				   <Route path="/mypage" element={<MyPage />} />
-				   <Route path="/investment-survey" element={<InvestmentSurvey />} />
-				   <Route path="/boards" element={<BoardList />} />
-				   <Route path="/boards/write" element={<BoardWrite />} />
-				   <Route path="/boards/:id" element={<BoardDetail />} />
-				</Routes>
+                <Routes>
+                    <Route path="/" element={<MarketIndex />} />
+                    <Route path="/main" element={<MarketIndex />}/>
+                    <Route path="/signup" element={<SignUp />} />
+                    <Route path="/login" element={<Login setUser={setUser} />} />
+                    <Route path="/mypage" element={<MyPage />} />
+                    <Route path="/investment-survey" element={<InvestmentSurvey />} />
+                    <Route path="/boards" element={<BoardList />} />
+                    <Route path="/boards/write" element={<BoardWrite />} />
+                    <Route path="/boards/:id" element={<BoardDetail />} />
+                </Routes>
             </div>
         </Router>
     );

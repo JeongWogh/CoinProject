@@ -8,6 +8,7 @@ function SignUp() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         username: '',
+		nickname: '',
         email: '',
         password: ''
     });
@@ -40,7 +41,17 @@ function SignUp() {
                         name="username"
                         value={formData.username}
                         onChange={handleChange}
-                        placeholder="사용자명"
+                        placeholder="아이디"
+                        required
+                    />
+                </div>
+				<div className="form-group">
+                    <input
+                        type="text"
+                        name="nickname"
+                        value={formData.nickname}
+                        onChange={handleChange}
+                        placeholder="닉네임"
                         required
                     />
                 </div>
