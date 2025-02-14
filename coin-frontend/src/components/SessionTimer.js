@@ -8,7 +8,7 @@ function SessionTimer({ setUser }) {
        const sessionStart = localStorage.getItem('sessionStart');
        if (!sessionStart) {
            localStorage.setItem('sessionStart', Date.now().toString());
-           return 60;
+           return 1800;
        }
        
        const elapsed = Math.floor((Date.now() - parseInt(sessionStart)) / 1000);
@@ -20,7 +20,7 @@ function SessionTimer({ setUser }) {
 
    const resetTimer = () => {
        localStorage.setItem('sessionStart', Date.now().toString());
-       setTimeLeft(60);
+       setTimeLeft(1800);
    };
 
    useEffect(() => {
